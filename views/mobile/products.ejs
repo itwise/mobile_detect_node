@@ -1,0 +1,19 @@
+<% include ./partials/header.ejs %>
+<% include ./partials/nav.ejs %>
+  <div class="container">
+    <div>
+      <ul class="list-inline">
+      <% for(var i = 0; i < products.length; i++){%>
+        <li class="product">
+          <div class="product-image-wrapper" style="background-image:url('<%= products[i].imageUrl %>')">
+            <div class="product-image"></div>
+          </div>
+          <div class="product-name">
+            <%= products[i].name %>
+          </div>
+        </li>
+      <% } %>
+      </ul>
+    </div>
+  </div>
+<% include ./partials/footer.ejs %>

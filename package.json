@@ -1,0 +1,16 @@
+{
+  "name": "simple_wurfl_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.1.4",
+    "express": "^4.11.0",
+    "mobile-detect": "^0.4.3"
+  }
+}

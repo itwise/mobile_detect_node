@@ -1,0 +1,11 @@
+<html>
+  <meta charset="utf-8"></meta>
+  <body>
+    기기종류 : <span id="device-name"></span>
+    <script type="text/javascript" src="//wurfl.io/wurfl.js"></script>
+    <script>
+      console.log(WURFL);
+      document.querySelector('#device-name').innerHTML = WURFL.complete_device_name;
+    </script>
+  </body>
+</html>
