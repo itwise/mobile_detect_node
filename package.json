@@ -1,12 +1,12 @@
 {
-  "name": "simple_wurfl_server",
-  "version": "1.0.0",
+  "name": "mobile_detect",
+  "version": "0.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
-  "author": "",
+  "author": "rotoshine@gmail.com",
   "license": "MIT",
   "dependencies": {
     "ejs": "^2.1.4",
