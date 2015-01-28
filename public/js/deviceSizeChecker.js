@@ -17,7 +17,7 @@
                resultHTML = resultHTML + '기기픽셀 배율값을 얻어올 수 없습니다.<br>';
            }
 
-           resultHTML = resultHTML + '스크린의 해상도는 width:' + window.screen.width + ', height:' + window.screen.height + '입니다.<br>';
+           resultHTML = resultHTML + '스크린의 해상도는 width:' + (window.screen.width * devicePixelRatio)  + ', height:' + (window.screen.height * devicePixelRatio) + '입니다.<br>';
            resultHTML = resultHTML + 'User Agent: ' + window.navigator.userAgent;
 
            if($('#screen-info').size() > 0){
