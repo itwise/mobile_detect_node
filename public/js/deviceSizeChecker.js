@@ -1,29 +1,28 @@
 'use strict';
 (function($){
    $(document).ready(function(){
+       var template = Handlebars.compile($('#testReport').html());
        function renderingScreenInfo(){
-           var width = $(window).width();
-           var height = $(window).height();
            var devicePixelRatio = window.devicePixelRatio;
            if(devicePixelRatio === undefined){
                if(window.screen.deviceXDPI && window.screen.logicalXDPI){
                    devicePixelRatio = window.screen.deviceXDPI / window.screen.logicalXDPI;
                }
            }
-           var resultHTML = '<div id="screen-info"> 현재 화면의 해상도는 width:' + width + ', height:' + height +'입니다.<br>';
-           if(devicePixelRatio !== undefined){
-               resultHTML = resultHTML + '기기픽셀 배율은 ' + devicePixelRatio + '입니다.<br>';
-           }else{
-               resultHTML = resultHTML + '기기픽셀 배율값을 얻어올 수 없습니다.<br>';
-           }
 
-           resultHTML = resultHTML + '스크린의 해상도는 width:' + (window.screen.width * devicePixelRatio)  + ', height:' + (window.screen.height * devicePixelRatio) + '입니다.<br>';
-           resultHTML = resultHTML + 'User Agent: ' + window.navigator.userAgent;
+           var renderData = {
+               logicalWidth: window.screen.width,
+               logicalHeight: window.screen.height,
+               devicePixelRatio: devicePixelRatio,
+               physicalWidth: window.screen.width * devicePixelRatio,
+               physicalHeight: window.screen.height * devicePixelRatio,
+               userAgent: window.navigator.userAgent
+           };
 
-           if($('#screen-info').size() > 0){
-               $('#screen-info').remove();
+           if($('#screen-info').size() === 0){
+               $('.container').append('<div id="screen-info"></div>');
            }
-           $('body').append(resultHTML);
+           $('#screen-info').html(template(renderData));
        }
 
        renderingScreenInfo();

@@ -72,3 +72,10 @@ body{
     font-weight: bold;
     padding:2px 2px 2px 2px;
 }
+
+dt, dd {
+    margin: 0; padding: 0;
+}
+dt {
+    float: left; margin-right: 0.3em;
+}

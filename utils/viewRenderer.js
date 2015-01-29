@@ -4,7 +4,6 @@ var MobileDetect = require('mobile-detect');
 exports.render = function(req, res, params){
     var device = new MobileDetect(req.headers['user-agent']);
 
-
     var resolvingView = 'default';
 
     if(device.mobile() || device.tablet()){
@@ -15,6 +14,5 @@ exports.render = function(req, res, params){
     }
 
     // mobile view가 없는경우 default로 한다.
-
     res.render(resolvingView + '/' + params.viewName, params);
 };
